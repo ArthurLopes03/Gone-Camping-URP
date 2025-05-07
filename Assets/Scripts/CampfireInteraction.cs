@@ -8,11 +8,12 @@ public class CampfireInteraction : InteractableObject
     GameObject cookingSetObj;
     public override void Interaction()
     {
-        if (GameObject.Find("Player").GetComponent<ObjectInteraction>().CheckTool(cookingSetTool))
+        GameObject player = GameObject.Find("Player");
+        if (player.GetComponent<ObjectInteraction>().CheckTool(cookingSetTool))
         {
+            player.GetComponent<ObjectInteraction>().ClearTool();
+            player.GetComponent<PlayerItemManager>().RemoveTool(cookingSetTool);
             cookingSetObj.SetActive(true);
-
-            GameObject.Find("Player").GetComponent<ObjectInteraction>().ClearTool();
         }
         else
         {

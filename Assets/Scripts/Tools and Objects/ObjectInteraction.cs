@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class ObjectInteraction : MonoBehaviour
 {
+    public bool isInteracting = true;
+
     [SerializeField]
     GameObject InteractUI;
 
@@ -32,9 +34,23 @@ public class ObjectInteraction : MonoBehaviour
     InteractableObject interactableObject;
     private void Update()
     {
+        if(isInteracting == false)
+        {
+            return;
+        }
+        CheckForInteractables();
+        //Debug.DrawRay(cameraObj.transform.position, cameraObj.transform.forward * interactDistance, Color.green, mask);
+
+        if (Input.GetKeyDown("e") && isUIActive)
+        {
+            interactableObject.Interaction();
+        }
+    }
+
+    private void CheckForInteractables()
+    {
         if (Physics.Raycast(cameraObj.transform.position, cameraObj.transform.forward, out var hit, Mathf.Infinity, mask))
         {
-
             var obj = hit.collider.gameObject;
 
             interactableObject = obj.GetComponent<InteractableObject>();
@@ -56,19 +72,13 @@ public class ObjectInteraction : MonoBehaviour
                 isUIActive = false;
                 DisplayInteractText(null);
             }
-            
+
         }
         else
         {
             interactableObject = null;
             isUIActive = false;
             DisplayInteractText(null);
-        }
-        //Debug.DrawRay(cameraObj.transform.position, cameraObj.transform.forward * interactDistance, Color.green, mask);
-
-        if (Input.GetKeyDown("e") && isUIActive)
-        {
-            interactableObject.Interaction();
         }
     }
 
@@ -99,5 +109,10 @@ public class ObjectInteraction : MonoBehaviour
     public void ClearTool()
     {
         heldTool = null;
+    }
+
+    public Tool GetTool()
+    {
+        return heldTool;
     }
 }

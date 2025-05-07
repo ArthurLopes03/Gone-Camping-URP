@@ -3,7 +3,7 @@ using UnityEngine;
 public class InteractableObject : MonoBehaviour
 {
     [SerializeField]
-    Tool requiredTool = null;
+    protected Tool requiredTool = null;
 
     [SerializeField]
     string stringToDisplay = "Interact";
@@ -28,6 +28,11 @@ public class InteractableObject : MonoBehaviour
     virtual public string GetStringToDisplay()
     {
         return stringToDisplay;
+    }
+
+    protected void AlterStringToDisplay(string newString)
+    {
+        stringToDisplay = newString;
     }
 
 }

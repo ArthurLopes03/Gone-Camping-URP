@@ -79,7 +79,15 @@ public class Backpack : InteractableObject
 
         if(item.isTool == true)
         {
-            player.GetComponent<ObjectInteraction>().ChangeTool((Tool)item);
+            if(player.GetComponent<PlayerItemManager>().AddItem((Tool)item))
+            {
+                items.Remove(item);
+            }
+            else
+            {
+                Debug.Log("No empty slots in the backpack.");
+                return;
+            }
         }
         else
         {
