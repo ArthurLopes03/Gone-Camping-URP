@@ -1,40 +1,98 @@
-using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class TaskManager : MonoBehaviour
 {
-    public TaskUI taskUIManager;
-    public Task currentTask;
-    public string taskText;
+    [SerializeField]
+    private TaskGroup[] taskGroups;
 
-    public List<Task> tasks = new List<Task> { };
+    [SerializeField]
+    GameObject content;
 
-    int taskIndex = 0;
+    [SerializeField]
+    TextMeshProUGUI taskGroupNameText;
 
-    public void NextTask()
+    [SerializeField]
+    GameObject taskUIPrefab;
+
+    [SerializeField]
+    float fadeSpeed = 0.05f;
+    bool isTextFading = false;
+
+    public float alpha = 1;
+
+    int currentTask = 0;
+
+    void GenerateTaskUI(TaskGroup taskGroup)
     {
-        taskIndex++;
+        taskGroupNameText.text = taskGroup.groupName;
 
-        if (taskIndex >= tasks.Count)
+        foreach (Task task in taskGroup.tasks)
         {
-            Debug.Log("All tasks completed!");
-            return;
+            GameObject taskUI = Instantiate(taskUIPrefab, content.transform);
+            
+            string taskName = task.taskName;
+
+            taskName = "- " + taskName;
+
+            taskUI.GetComponent<TextMeshProUGUI>().text = taskName;
+
+            task.SetTaskText(taskUI.GetComponent<TextMeshProUGUI>());
         }
-        currentTask = tasks[taskIndex];
-
-        currentTask.isTaskActive = true;
-
-        taskText = currentTask.name;
-
-        taskUIManager.SetTaskText(taskText);
     }
 
-    void Start()
+    private void Start()
     {
-        currentTask = tasks[taskIndex];
+        GenerateTaskUI(taskGroups[0]);
+    }
 
-        taskText = currentTask.name;
+    private void Update()
+    {
+        if(isTextFading)
+        {
+            FadeText();
+        }
+    }
 
-        taskUIManager.SetTaskText(taskText);
+    public void CompleteTaskGroup()
+    {
+        isTextFading = true;
+    }
+
+    void FadeText()
+    {
+        alpha -= fadeSpeed * Time.deltaTime;
+
+        if (alpha <= 0)
+        {
+            alpha = 0;
+            isTextFading = false;
+            NextTask();
+        }
+
+        taskGroupNameText.alpha = alpha;
+
+        foreach (Task task in taskGroups[0].tasks)
+        {
+            task.FadeText(fadeSpeed);
+        }
+    }
+
+    void NextTask()
+    {
+        currentTask++;
+        alpha = 1;
+        if (currentTask >= taskGroups.Length)
+        {
+            Debug.Log("All tasks completed!");
+            currentTask = 0;
+        }
+        foreach (Transform child in content.transform)
+        {
+            Destroy(child.gameObject);
+        }
+        GenerateTaskUI(taskGroups[currentTask]);
+
+        taskGroups[currentTask].active = true;
     }
 }

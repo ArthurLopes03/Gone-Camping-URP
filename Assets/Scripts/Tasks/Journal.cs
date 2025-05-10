@@ -10,8 +10,6 @@ public class Journal : MonoBehaviour
     public TextMeshProUGUI currentObjectiveText;
     bool journalOpen;
 
-    public TaskManager taskManager;
-
     void Start()
     {
         journalOpen = false;
@@ -30,8 +28,6 @@ public class Journal : MonoBehaviour
                 CloseJournal();
             }
         }
-
-        currentObjectiveText.text = taskManager.taskText;
     }
 
     public void OpenJournal()

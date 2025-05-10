@@ -301,7 +301,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_TargetDisplay: 0
 --- !u!114 &5923274867265608133
 MonoBehaviour:
@@ -356,7 +356,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buttonPrefab: {fileID: 1625084066522676296, guid: f1ddfd1383746a547a34956b5c24fd41, type: 3}
-  UIContent: {fileID: 5383086258781399023}
+  emptyButtonPrefab: {fileID: 0}
+  UIBackpackContent: {fileID: 0}
+  UIHeldItemsContent: {fileID: 0}
+  playerItemManager: {fileID: 0}
 --- !u!1 &2897092000968586528
 GameObject:
   m_ObjectHideFlags: 0

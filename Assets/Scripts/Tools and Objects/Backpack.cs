@@ -11,6 +11,8 @@ public class Backpack : InteractableObject
     GameObject interactUI;
     GameObject player;
 
+    Task task;
+
     BackpackUIGenerator backpackUIGenerator;
 
     public List<BackpackStorableItem> items;
@@ -22,6 +24,13 @@ public class Backpack : InteractableObject
         backpackUIGenerator = backpackUI.GetComponent<BackpackUIGenerator>();
         playerUI = GameObject.Find("Player UI");
         interactUI = GameObject.Find("Interact UI");
+
+        task = GameObject.Find("Put Down Backpack").GetComponent<Task>();
+
+        if(task != null)
+        {
+            task.CompleteTask();
+        }
     }
 
     public override void Interaction()
@@ -43,8 +52,6 @@ public class Backpack : InteractableObject
 
     public void CloseBackPack()
     {
-        backpackUIGenerator.ClearButtons();
-
         backpackOpen = false;
 
         player.GetComponent<PlayerController>().enabled = true;
@@ -73,10 +80,16 @@ public class Backpack : InteractableObject
         Cursor.lockState = CursorLockMode.None;
     }
 
+    public void PutItemInBackpack(BackpackStorableItem item)
+    {
+        items.Add(item);
+
+        player.GetComponent<PlayerItemManager>().ReplaceTool((Tool)item, null);
+
+        backpackUIGenerator.GenerateButtons(this);
+    }
     public void TakeItemFromBackpack(BackpackStorableItem item)
     {
-        CloseBackPack();
-
         if(item.isTool == true)
         {
             if(player.GetComponent<PlayerItemManager>().AddItem((Tool)item))
@@ -93,10 +106,15 @@ public class Backpack : InteractableObject
         {
             Structure structure = (Structure)item;
 
-            player.GetComponent<ObjectPlacer>().ChangeSelectedStructure((Structure)item, 
-                Instantiate(structure.structureBlueprint, player.transform.position, Quaternion.identity));
+            PlayerItemManager playerItemManager = player.GetComponent<PlayerItemManager>();
+
+            playerItemManager.PickUpStructure(structure);
+
+            CloseBackPack();
         }
 
         items.Remove(item);
+
+        backpackUIGenerator.GenerateButtons(this);
     }
 }

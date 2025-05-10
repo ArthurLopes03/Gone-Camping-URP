@@ -17,19 +17,6 @@ public class CampfireSetup : InteractableObject
         backpackInventory = GameObject.FindGameObjectWithTag("Player").GetComponent<BackpackInventory>();
     }
 
-    [SerializeField] Task setUpCampfireTask;
-    public override bool CanInteract(Tool heldTool)
-    {
-        if (setUpCampfireTask.isTaskActive)
-        {
-            return base.CanInteract(heldTool);
-        }
-        else
-        {
-            return false;
-        }
-    }
-
     public override string GetStringToDisplay()
     {
         string stringToDisplay = "";
@@ -61,7 +48,6 @@ public class CampfireSetup : InteractableObject
         {
             backpackInventory.AddItem(new Item("Wood", -requiredWood));
             backpackInventory.AddItem(new Item("Tinder", -requiredTinder));
-            setUpCampfireTask.CompleteTask();
 
             campfire.SetActive(true);
             this.gameObject.SetActive(false);

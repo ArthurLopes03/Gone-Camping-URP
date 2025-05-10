@@ -5,6 +5,10 @@ using UnityEngine.UI;
 public class ItemUISlot : MonoBehaviour
 {
     Tool SlottedTool;
+
+    [SerializeField]
+    GameObject UIObj;
+
     public Tool slottedTool
     {
         get { return SlottedTool; }
@@ -21,14 +25,12 @@ public class ItemUISlot : MonoBehaviour
     }
 
     TextMeshProUGUI toolNameText;
-
-    [SerializeField]
     Image image;
 
     private void Awake()
     {
-        image = GetComponent<Image>();
-        toolNameText = GetComponentInChildren<TextMeshProUGUI>();
+        image = UIObj.GetComponent<Image>();
+        toolNameText = UIObj.GetComponentInChildren<TextMeshProUGUI>();
         if (toolNameText == null)
         {
             Debug.LogError("Tool name text component not found in children.");
@@ -45,5 +47,13 @@ public class ItemUISlot : MonoBehaviour
         {
             image.color = new Color(1, 1, 1, 0.5f);
         }
+    }
+
+    public void DarkenUI(bool on)
+    {
+        if (on)
+            image.color = new Color(1, 1, 1, 0.2f);
+        else
+            image.color = new Color(1, 1, 1, 0.5f);
     }
 }

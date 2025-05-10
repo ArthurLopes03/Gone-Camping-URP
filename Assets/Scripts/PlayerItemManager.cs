@@ -3,14 +3,16 @@ using UnityEngine;
 
 public class PlayerItemManager : MonoBehaviour
 {
-    [SerializeField]
-    ItemUISlot slot1, slot2, slot3, slot4;
-
-    ItemUISlot[] slots;
+    public ItemUISlot[] slots;
 
     ItemUISlot currentlySelectedSlot;
 
     ObjectInteraction objectInteraction;
+
+    ObjectPlacer objectPlacer;
+
+    bool itemsEnabled = true;
+
     public bool AddItem(Tool tool)
     {
         foreach (ItemUISlot slot in slots)
@@ -29,15 +31,11 @@ public class PlayerItemManager : MonoBehaviour
     private void Awake()
     {
         objectInteraction = GameObject.Find("Player").GetComponent<ObjectInteraction>();
+        objectPlacer = GameObject.Find("Player").GetComponent<ObjectPlacer>();
     }
 
     private void Start()
     {
-        slots = new ItemUISlot[4];
-        slots[0] = slot1;
-        slots[1] = slot2;
-        slots[2] = slot3;
-        slots[3] = slot4;
         foreach (ItemUISlot slot in slots)
         {
             if (slot == null)
@@ -47,6 +45,8 @@ public class PlayerItemManager : MonoBehaviour
 
             SelectSlot(slot);
         }
+
+        DisableItems();
     }
 
     public void SelectSlot(ItemUISlot slot)
@@ -80,10 +80,22 @@ public class PlayerItemManager : MonoBehaviour
         {
             if (slot.slottedTool == toolToReplace)
             {
+                if (currentlySelectedSlot.slottedTool == toolToReplace)
+                {
+                    objectInteraction.ChangeTool(newTool);
+                }
+
                 slot.slottedTool = newTool;
                 return;
             }
         }
+    }
+
+    public void PickUpStructure(Structure structure)
+    {
+        DisableItems();
+
+        objectPlacer.ChangeSelectedStructure(structure, Instantiate(structure.structureBlueprint, transform.position, Quaternion.identity));
     }
 
     public Tool GetCurrentlySelectedItem()
@@ -93,21 +105,53 @@ public class PlayerItemManager : MonoBehaviour
 
     private void Update()
     {
+        if(itemsEnabled)
+        {
+            ProcessInput();
+        }
+    }
+
+    void ProcessInput()
+    {
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
-            SelectSlot(slot1);
+            SelectSlot(slots[0]);
         }
         else if (Input.GetKeyDown(KeyCode.Alpha2))
         {
-            SelectSlot(slot2);
+            SelectSlot(slots[1]);
         }
         else if (Input.GetKeyDown(KeyCode.Alpha3))
         {
-            SelectSlot(slot3);
+            SelectSlot(slots[2]);
         }
         else if (Input.GetKeyDown(KeyCode.Alpha4))
         {
-            SelectSlot(slot4);
+            SelectSlot(slots[3]);
         }
+    }
+
+    void DisableItems()
+    {
+        itemsEnabled = false;
+
+        objectInteraction.ChangeTool(null);
+
+        foreach (ItemUISlot slot in slots)
+        {
+            slot.DarkenUI(true);
+        }
+    }
+
+    public void EnableItems()
+    {
+        foreach (ItemUISlot slot in slots)
+        {
+            slot.DarkenUI(false);
+        }
+
+        itemsEnabled = true;
+        
+        SelectSlot(slots[0]);
     }
 }

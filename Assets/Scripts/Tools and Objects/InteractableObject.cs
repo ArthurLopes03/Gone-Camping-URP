@@ -34,5 +34,4 @@ public class InteractableObject : MonoBehaviour
     {
         stringToDisplay = newString;
     }
-
 }

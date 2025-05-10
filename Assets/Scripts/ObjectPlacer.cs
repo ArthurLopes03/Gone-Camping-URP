@@ -74,5 +74,7 @@ public class ObjectPlacer : MonoBehaviour
 
         structureBlueprint = null;
         structurePrefab = null;
+
+        this.GetComponent<PlayerItemManager>().EnableItems();
     }
 }

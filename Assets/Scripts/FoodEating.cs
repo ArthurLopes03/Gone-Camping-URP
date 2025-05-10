@@ -7,6 +7,9 @@ public class FoodEating : MonoBehaviour
     PlayerItemManager playerItemManager;
     TextMeshProUGUI interactionText;
 
+    [SerializeField]
+    Tool dirtyEatingKit;
+
     public bool holdingFood = false;
 
     private void Start()
@@ -36,7 +39,7 @@ public class FoodEating : MonoBehaviour
         if(Input.GetKeyDown("e") && holdingFood)
         {
             objectInteraction.isInteracting = true;
-            GetComponent<PlayerItemManager>().ReplaceTool(objectInteraction.GetTool(), null);
+            GetComponent<PlayerItemManager>().ReplaceTool(objectInteraction.GetTool(), dirtyEatingKit);
 
             Debug.Log("Food Eaten");
             objectInteraction.ClearTool();
