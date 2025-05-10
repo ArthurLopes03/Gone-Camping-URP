@@ -369,6 +369,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   requiredTool: {fileID: 0}
   stringToDisplay: Go to Sleep
+  tentStructure: {fileID: 11400000, guid: 1bb943ed61ebb6c469496ec72066be26, type: 2}
 --- !u!4 &1810528554758787618 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 49ede5f751b9fb745b1b149565633059, type: 3}

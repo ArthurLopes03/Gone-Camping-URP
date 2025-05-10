@@ -11,6 +11,8 @@ public class ObjectPlacer : MonoBehaviour
 
     Transform cameraTransform;
 
+    public Structure structureBeingPlaced;
+
     private bool isPlacingStructure = false;
 
     private void Start()
@@ -27,7 +29,6 @@ public class ObjectPlacer : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Q) && structurePrefab != null)
             {
-                Debug.Log("Placing structure: " + structurePrefab.name);
                 isPlacingStructure = true;
                 structureBlueprint.SetActive(true);
             }
@@ -54,6 +55,12 @@ public class ObjectPlacer : MonoBehaviour
             {
                 PlaceStruture();
             }
+
+            if (Input.GetKeyDown(KeyCode.Mouse1))
+            {
+                structureBlueprint.SetActive(false);
+                isPlacingStructure = false;
+            }
         }
     }
 
@@ -65,6 +72,13 @@ public class ObjectPlacer : MonoBehaviour
         structureBlueprint.SetActive(false);
     }
 
+    public void SetStructureNull()
+    {
+        structurePrefab = null;
+        structureBlueprint = null;
+        structureBeingPlaced = null;
+    }
+
     private void PlaceStruture()
     {
         structureBlueprint.SetActive(false);
@@ -74,6 +88,7 @@ public class ObjectPlacer : MonoBehaviour
 
         structureBlueprint = null;
         structurePrefab = null;
+        structureBeingPlaced = null;
 
         this.GetComponent<PlayerItemManager>().EnableItems();
     }

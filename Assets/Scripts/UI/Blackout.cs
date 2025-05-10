@@ -19,6 +19,18 @@ public class Blackout : MonoBehaviour
         isFadingIn = true;
 
         onFadeInComplete = action;
+
+        GameObject.Find("Player").GetComponent<PlayerController>().enabled = false;
+        GameObject.Find("Player").GetComponent<ObjectInteraction>().enabled = false;
+    }
+
+    void EndBlackout()
+    {
+        onFadeInComplete = null;
+        isFadingOut = false;
+
+        GameObject.Find("Player").GetComponent<PlayerController>().enabled = true;
+        GameObject.Find("Player").GetComponent<ObjectInteraction>().enabled = true;
     }
 
     private void Update()
@@ -50,8 +62,7 @@ public class Blackout : MonoBehaviour
         blackoutImage.color = new Color(0, 0, 0, Mathf.Clamp(blackoutImage.color.a - fadeSpeed * Time.deltaTime, 0, 1));
         if (blackoutImage.color.a <= 0)
         {
-            onFadeInComplete = null;
-            isFadingOut = false;
+            EndBlackout();
         }
     }
 }

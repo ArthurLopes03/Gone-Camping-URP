@@ -95,7 +95,15 @@ public class PlayerItemManager : MonoBehaviour
     {
         DisableItems();
 
+        objectPlacer.structureBeingPlaced = structure;
+
         objectPlacer.ChangeSelectedStructure(structure, Instantiate(structure.structureBlueprint, transform.position, Quaternion.identity));
+    }
+
+    public void PutAwayStructure()
+    {
+        EnableItems();
+        objectPlacer.SetStructureNull();
     }
 
     public Tool GetCurrentlySelectedItem()

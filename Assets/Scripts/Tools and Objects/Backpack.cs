@@ -35,8 +35,37 @@ public class Backpack : InteractableObject
 
     public override void Interaction()
     {
+        if(player.GetComponent<ObjectPlacer>().structureBeingPlaced != null && player.GetComponent<ObjectPlacer>().structureBeingPlaced.canReturnToBackpack)
+        {
+            PutItemInBackpack(player.GetComponent<ObjectPlacer>().structureBeingPlaced);
+
+            player.GetComponent<ObjectPlacer>().structureBeingPlaced = null;
+
+            player.GetComponent<PlayerItemManager>().EnableItems();
+
+            return;
+        }
+
         backpackUIGenerator.GenerateButtons(this);
         OpenBackPack();
+    }
+
+    public override bool CanInteract(Tool heldTool)
+    {
+        if(player.GetComponent<ObjectPlacer>().structureBeingPlaced != null && player.GetComponent<ObjectPlacer>().structureBeingPlaced.canReturnToBackpack)
+        {
+            AlterStringToDisplay("Return " + player.GetComponent<ObjectPlacer>().structureBeingPlaced.itemName + " to Backpack");
+            return true;
+        }
+        else if(heldTool == requiredTool || requiredTool == null)
+        {
+            AlterStringToDisplay("Open Backpack");
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
 
     private void Update()
@@ -84,7 +113,14 @@ public class Backpack : InteractableObject
     {
         items.Add(item);
 
-        player.GetComponent<PlayerItemManager>().ReplaceTool((Tool)item, null);
+        if (item.isTool == true)
+        {
+            player.GetComponent<PlayerItemManager>().ReplaceTool((Tool)item, null);
+        }
+        else
+        {
+            player.GetComponent<PlayerItemManager>().PutAwayStructure();
+        }
 
         backpackUIGenerator.GenerateButtons(this);
     }

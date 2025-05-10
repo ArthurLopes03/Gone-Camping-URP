@@ -2,12 +2,16 @@ using UnityEngine;
 
 public class TentInteraction : InteractableObject
 {
-    TaskGroup taskGroup;
+    TaskGroup taskGroup3, taskGroup4;
+
+    [SerializeField] Structure tentStructure;
 
     void Start()
     {
-        taskGroup = GameObject.Find("Task Group 3").GetComponent<TaskGroup>();
-        if (taskGroup == null)
+        taskGroup3 = GameObject.Find("Task Group 3").GetComponent<TaskGroup>();
+        taskGroup4 = GameObject.Find("Task Group 4").GetComponent<TaskGroup>();
+
+        if (taskGroup3 == null || taskGroup4 == null)
         {
             Debug.LogError("TentInteraction script requires a TaskGroup component on the parent object.");
         }
@@ -15,12 +19,19 @@ public class TentInteraction : InteractableObject
 
     public override bool CanInteract(Tool heldTool)
     {
-        if (taskGroup == null)
+        if (taskGroup3 == null)
         {
             return false;
         }
-        if (heldTool == null && taskGroup.active)
+
+        if (heldTool == null && taskGroup3.active)
         {
+            AlterStringToDisplay("Go To Sleep");
+            return true;
+        }
+        else if (heldTool == requiredTool && taskGroup4.active)
+        {
+            AlterStringToDisplay("Pack Up Tent");
             return true;
         }
         else
@@ -31,11 +42,26 @@ public class TentInteraction : InteractableObject
 
     public override void Interaction()
     {
-        GameObject.Find("Blackout Canvas").GetComponent<Blackout>().StartBlackout(NextDay);
+        if(taskGroup3.active)
+        {
+            GameObject.Find("Blackout Canvas").GetComponent<Blackout>().StartBlackout(NextDay);
+        }
+        else if (taskGroup4.active)
+        {
+            PackUpTent();
+        }
     }
 
     void NextDay()
     {
         Debug.Log("Next day!");
+        taskGroup3.gameObject.GetComponentInChildren<Task>().CompleteTask();
+    }
+
+    void PackUpTent()
+    {
+        GameObject.Find("Player").GetComponent<PlayerItemManager>().PickUpStructure(tentStructure);
+
+        this.gameObject.SetActive(false);
     }
 }

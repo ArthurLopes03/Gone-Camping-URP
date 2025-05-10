@@ -16,3 +16,4 @@ MonoBehaviour:
   itemName: Tent
   structurePrefab: {fileID: 1990646998305177206, guid: 0ec5d7eeb70eea74d834574e0fd45cde, type: 3}
   structureBlueprint: {fileID: 4054500914325585135, guid: fcbb02d73c1857e4e921db334b5c2607, type: 3}
+  canReturnToBackpack: 1
