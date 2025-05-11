@@ -1736,7 +1736,7 @@ GameObject:
   - component: {fileID: 350313333}
   - component: {fileID: 350313335}
   - component: {fileID: 350313334}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Point Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2203,7 +2203,7 @@ GameObject:
   - component: {fileID: 406025463}
   - component: {fileID: 406025465}
   - component: {fileID: 406025464}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Point Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2627,7 +2627,9 @@ GameObject:
   - component: {fileID: 455570487}
   - component: {fileID: 455570486}
   - component: {fileID: 455570485}
-  m_Layer: 0
+  - component: {fileID: 455570488}
+  - component: {fileID: 455570489}
+  m_Layer: 6
   m_Name: Stick 1 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2696,13 +2698,51 @@ Transform:
   m_GameObject: {fileID: 455570484}
   serializedVersion: 2
   m_LocalRotation: {x: -0.6532817, y: -0.2705976, z: -0.27059758, w: 0.6532817}
-  m_LocalPosition: {x: -37.010216, y: 16.40202, z: -5.2828064}
+  m_LocalPosition: {x: -37.010216, y: 14.46, z: -5.2828064}
   m_LocalScale: {x: 323, y: 322.99994, z: 322.99994}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 350313333}
   m_Father: {fileID: 371134343}
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: -45}
+--- !u!114 &455570488
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 455570484}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ca22f9d3b765a04fae54a02c9dbe252, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  requiredTool: {fileID: 0}
+  stringToDisplay: Pick Up Stick
+  item:
+    name: Stick
+    count: 1
+--- !u!65 &455570489
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 455570484}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.001, y: 0.001, z: 0.0028509984}
+  m_Center: {x: 0.0061556036, y: -0.0044035264, z: 0.0043395963}
 --- !u!1 &463019733 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 197464344426810305, guid: 89a833652876a4547b1545caacd021b8, type: 3}
@@ -4025,10 +4065,20 @@ PrefabInstance:
       propertyPath: m_Name
       value: LeafPile
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 86d12eb4122f138409af4edccc270338, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 86d12eb4122f138409af4edccc270338, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1833696166}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 86d12eb4122f138409af4edccc270338, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1833696167}
   m_SourcePrefab: {fileID: 100100000, guid: 86d12eb4122f138409af4edccc270338, type: 3}
 --- !u!1 &708689139 stripped
 GameObject:
@@ -4129,7 +4179,7 @@ GameObject:
   - component: {fileID: 722501091}
   - component: {fileID: 722501093}
   - component: {fileID: 722501092}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Point Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5444,6 +5494,37 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.02, y: 0.02, z: 0.33577642}
   m_Center: {x: 0, y: 0, z: 0.16796416}
+--- !u!1 &997003722
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 997003723}
+  m_Layer: 0
+  m_Name: DisplayRoot
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &997003723
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 997003722}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0.00011}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5969768214899857650}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &997882196
 GameObject:
   m_ObjectHideFlags: 0
@@ -10561,12 +10642,22 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 86d12eb4122f138409af4edccc270338, type: 3}
       propertyPath: m_Name
-      value: LeafPile (2)
+      value: LeafPile
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 86d12eb4122f138409af4edccc270338, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 86d12eb4122f138409af4edccc270338, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1983813420}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 86d12eb4122f138409af4edccc270338, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1983813421}
   m_SourcePrefab: {fileID: 100100000, guid: 86d12eb4122f138409af4edccc270338, type: 3}
 --- !u!1 &1271982831 stripped
 GameObject:
@@ -11851,6 +11942,49 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1571296b53d22f347a4b466a3df62a58, type: 3}
+--- !u!1 &1557125219 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 86d12eb4122f138409af4edccc270338, type: 3}
+  m_PrefabInstance: {fileID: 2083282427}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1557125223
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1557125219}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ca22f9d3b765a04fae54a02c9dbe252, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  requiredTool: {fileID: 0}
+  stringToDisplay: Interact
+  item:
+    name: LeafPile
+    count: 1
+--- !u!65 &1557125224
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1557125219}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.01, y: 0.01, z: 0.01}
+  m_Center: {x: 0.00033215148, y: 0.000606839, z: -0.0009452573}
 --- !u!1 &1568128213 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 9021471062391095466, guid: 89a833652876a4547b1545caacd021b8, type: 3}
@@ -12608,6 +12742,49 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.02, y: 0.02, z: 0.33577642}
   m_Center: {x: 0, y: 0, z: 0.16796426}
+--- !u!1 &1833696162 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 86d12eb4122f138409af4edccc270338, type: 3}
+  m_PrefabInstance: {fileID: 705121893}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1833696166
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1833696162}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ca22f9d3b765a04fae54a02c9dbe252, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  requiredTool: {fileID: 0}
+  stringToDisplay: Interact
+  item:
+    name: LeafPile
+    count: 1
+--- !u!65 &1833696167
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1833696162}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.01, y: 0.01, z: 0.01}
+  m_Center: {x: 0.00033215148, y: 0.000606839, z: -0.0009452573}
 --- !u!1001 &1840364381
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13261,7 +13438,9 @@ GameObject:
   - component: {fileID: 1947826931}
   - component: {fileID: 1947826930}
   - component: {fileID: 1947826929}
-  m_Layer: 0
+  - component: {fileID: 1947826932}
+  - component: {fileID: 1947826933}
+  m_Layer: 6
   m_Name: Stick 1 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13330,13 +13509,51 @@ Transform:
   m_GameObject: {fileID: 1947826928}
   serializedVersion: 2
   m_LocalRotation: {x: -0.68301284, y: 0.18301237, z: 0.18301238, w: 0.6830128}
-  m_LocalPosition: {x: -41.010216, y: 16.40202, z: 1.7171936}
+  m_LocalPosition: {x: -41.010216, y: 14.46, z: 1.7171936}
   m_LocalScale: {x: 323, y: 322.9999, z: 322.9999}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 406025463}
   m_Father: {fileID: 371134343}
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 30}
+--- !u!114 &1947826932
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1947826928}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ca22f9d3b765a04fae54a02c9dbe252, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  requiredTool: {fileID: 0}
+  stringToDisplay: Pick Up Stick
+  item:
+    name: Stick
+    count: 1
+--- !u!65 &1947826933
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1947826928}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.001, y: 0.001, z: 0.002850999}
+  m_Center: {x: 0.0061556115, y: -0.0044035194, z: 0.004339602}
 --- !u!1 &1965860632 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -4503805613272652206, guid: 89a833652876a4547b1545caacd021b8, type: 3}
@@ -13582,6 +13799,49 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cab9adc79d3c2c74e8db4849ed03276a, type: 3}
+--- !u!1 &1983813416 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 86d12eb4122f138409af4edccc270338, type: 3}
+  m_PrefabInstance: {fileID: 1269723178}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1983813420
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1983813416}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ca22f9d3b765a04fae54a02c9dbe252, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  requiredTool: {fileID: 0}
+  stringToDisplay: Interact
+  item:
+    name: LeafPile
+    count: 1
+--- !u!65 &1983813421
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1983813416}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.01, y: 0.01, z: 0.01}
+  m_Center: {x: 0.00033215148, y: 0.000606839, z: -0.0009452573}
 --- !u!1 &1988447228 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -3268178837854526749, guid: 89a833652876a4547b1545caacd021b8, type: 3}
@@ -14220,12 +14480,22 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 86d12eb4122f138409af4edccc270338, type: 3}
       propertyPath: m_Name
-      value: LeafPile (1)
+      value: LeafPile
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 86d12eb4122f138409af4edccc270338, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 86d12eb4122f138409af4edccc270338, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1557125223}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 86d12eb4122f138409af4edccc270338, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1557125224}
   m_SourcePrefab: {fileID: 100100000, guid: 86d12eb4122f138409af4edccc270338, type: 3}
 --- !u!1 &2092714465 stripped
 GameObject:
@@ -14434,7 +14704,7 @@ Transform:
   m_GameObject: {fileID: 9222406322312362644}
   serializedVersion: 2
   m_LocalRotation: {x: -0.65328175, y: -0.27059758, z: -0.2705976, w: 0.6532817}
-  m_LocalPosition: {x: -33.010216, y: 16.40202, z: -6.2828064}
+  m_LocalPosition: {x: -33.010216, y: 14.46, z: -6.2828064}
   m_LocalScale: {x: 323.00003, y: 322.99994, z: 322.9999}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -14581,6 +14851,63 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!1001 &3003324314347942257
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 488967847906767471, guid: 9f5971177d5819e44832344cc56a1d47, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 18.128809
+      objectReference: {fileID: 0}
+    - target: {fileID: 488967847906767471, guid: 9f5971177d5819e44832344cc56a1d47, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 3.598
+      objectReference: {fileID: 0}
+    - target: {fileID: 488967847906767471, guid: 9f5971177d5819e44832344cc56a1d47, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 19.847128
+      objectReference: {fileID: 0}
+    - target: {fileID: 488967847906767471, guid: 9f5971177d5819e44832344cc56a1d47, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.69264466
+      objectReference: {fileID: 0}
+    - target: {fileID: 488967847906767471, guid: 9f5971177d5819e44832344cc56a1d47, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.69264483
+      objectReference: {fileID: 0}
+    - target: {fileID: 488967847906767471, guid: 9f5971177d5819e44832344cc56a1d47, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.14227879
+      objectReference: {fileID: 0}
+    - target: {fileID: 488967847906767471, guid: 9f5971177d5819e44832344cc56a1d47, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.14227882
+      objectReference: {fileID: 0}
+    - target: {fileID: 488967847906767471, guid: 9f5971177d5819e44832344cc56a1d47, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 488967847906767471, guid: 9f5971177d5819e44832344cc56a1d47, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 488967847906767471, guid: 9f5971177d5819e44832344cc56a1d47, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 973614275167889621, guid: 9f5971177d5819e44832344cc56a1d47, type: 3}
+      propertyPath: m_Name
+      value: LeafPile (1)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 9f5971177d5819e44832344cc56a1d47, type: 3}
 --- !u!33 &3088811834945441608
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -14756,7 +15083,8 @@ Transform:
   m_LocalPosition: {x: 22, y: 2, z: 19}
   m_LocalScale: {x: 210.14557, y: 210.14557, z: 210.14554}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 997003723}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &6171665444591633533
@@ -14844,6 +15172,7 @@ GameObject:
   - component: {fileID: 5969768214899857650}
   - component: {fileID: 4233485034345632458}
   - component: {fileID: 2630970440033761312}
+  - component: {fileID: 8375976935601636667}
   m_Layer: 0
   m_Name: Tarp
   m_TagString: Untagged
@@ -14851,6 +15180,24 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &8375976935601636667
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8375976935601636666}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1433ccf9e1b49724c92f1ef67324fae9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  displayRoot: {fileID: 997003723}
+  itemMappings:
+  - itemName: LeafPile
+    prefab: {fileID: 919132149155446097, guid: 86d12eb4122f138409af4edccc270338, type: 3}
+  - itemName: Stick
+    prefab: {fileID: -965714747865260, guid: b9fced4ed5642de40b5c1ce22205217d, type: 3}
 --- !u!1 &9222406322312362644
 GameObject:
   m_ObjectHideFlags: 0
@@ -14862,13 +15209,53 @@ GameObject:
   - component: {fileID: 866277879431410993}
   - component: {fileID: 3088811834945441608}
   - component: {fileID: 6552083478456138136}
-  m_Layer: 0
+  - component: {fileID: 9222406322312362645}
+  - component: {fileID: 9222406322312362646}
+  m_Layer: 6
   m_Name: Stick 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &9222406322312362645
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9222406322312362644}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ca22f9d3b765a04fae54a02c9dbe252, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  requiredTool: {fileID: 0}
+  stringToDisplay: Pick Up Stick
+  item:
+    name: Stick
+    count: 1
+--- !u!65 &9222406322312362646
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9222406322312362644}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.001, y: 0.001, z: 0.0028509994}
+  m_Center: {x: 0.006155628, y: -0.0044035288, z: 0.004339602}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -14898,3 +15285,4 @@ SceneRoots:
   - {fileID: 705121893}
   - {fileID: 2083282427}
   - {fileID: 1269723178}
+  - {fileID: 3003324314347942257}
