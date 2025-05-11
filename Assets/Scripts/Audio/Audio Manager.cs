@@ -2,19 +2,19 @@ using UnityEngine;
 
 public class AudioManager : MonoBehaviour
 {
-    public static AudioManager instance;
+    public static AudioManager Instance;
 
     public AudioClip[] audioClips;
 
     public AudioSource AudioSourceTemplate;
-    private AudioSource[] audioSources = new AudioSource[32];
+    private AudioSource[] audioSources = new AudioSource[10];
 
     public int Volume = 1;
 
     private void Awake()
     {
-        if (instance == null)
-            instance = this;
+        if (Instance == null)
+            Instance = this;
         else
             Debug.LogError("More than 1 AudioManager exists.");
 
