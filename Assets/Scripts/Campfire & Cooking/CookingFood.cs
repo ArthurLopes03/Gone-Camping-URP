@@ -20,7 +20,6 @@ public class CookingFood : MonoBehaviour
         if (cookingTimer >= overCookPoint)
         {
             Debug.Log("Food is overcooked!");
-            isCooking = false;
         }
     }
 

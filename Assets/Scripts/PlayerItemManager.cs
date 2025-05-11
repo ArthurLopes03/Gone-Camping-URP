@@ -162,4 +162,16 @@ public class PlayerItemManager : MonoBehaviour
         
         SelectSlot(slots[0]);
     }
+
+    public bool HasItem(Tool tool)
+    {
+        foreach (ItemUISlot slot in slots)
+        {
+            if (slot.slottedTool == tool)
+            {
+                return true;
+            }
+        }
+        return false;
+    }   
 }

@@ -81,6 +81,7 @@ public class ObjectPlacer : MonoBehaviour
 
     private void PlaceStruture()
     {
+        Debug.Log("Placing structure: " + structurePrefab.name);
         structureBlueprint.SetActive(false);
         isPlacingStructure = false;
         Instantiate(structurePrefab, structureBlueprint.transform.position, structureBlueprint.transform.rotation);
@@ -91,5 +92,10 @@ public class ObjectPlacer : MonoBehaviour
         structureBeingPlaced = null;
 
         this.GetComponent<PlayerItemManager>().EnableItems();
+    }
+
+    public void SetPlacingStructure()
+    {
+        isPlacingStructure = true;
     }
 }

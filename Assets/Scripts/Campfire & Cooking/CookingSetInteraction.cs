@@ -3,7 +3,10 @@ using UnityEngine;
 public class CookingSetInteraction : InteractableObject
 {
     [SerializeField]
-    Tool eatingKit = null, cookedFood = null, filledWaterBucket = null, dirtyCookingSet;
+    Tool eatingKit, cookedFood, dirtyCookingSet;
+
+    [SerializeField]
+    Structure filledWaterBucket;
 
     CookingFood cookingFood;
 
@@ -30,7 +33,7 @@ public class CookingSetInteraction : InteractableObject
 
             isDirty = true;
         }
-        else if (playerItemManager.GetCurrentlySelectedItem() == filledWaterBucket)
+        else if (GameObject.Find("Player").GetComponent<ObjectPlacer>().structureBeingPlaced == filledWaterBucket)
         {
             if(filledWithWater)
             {
@@ -84,7 +87,7 @@ public class CookingSetInteraction : InteractableObject
             AlterStringToDisplay("Take Food");
             return true;
         }
-        else if (heldTool == filledWaterBucket && !cookingFood.isCooking)
+        else if (GameObject.Find("Player").GetComponent<ObjectPlacer>().structureBeingPlaced == filledWaterBucket && !cookingFood.isCooking)
         {
             AlterStringToDisplay("Fill with Water");
             return true;
@@ -96,6 +99,7 @@ public class CookingSetInteraction : InteractableObject
         }
         else
         {
+            AlterStringToDisplay("");
             return false;
         }
     }

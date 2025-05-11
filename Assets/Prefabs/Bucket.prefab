@@ -44,7 +44,8 @@ GameObject:
   - component: {fileID: 3388035531119587112}
   - component: {fileID: 2924487030774890347}
   - component: {fileID: 3557419382596859576}
-  m_Layer: 0
+  - component: {fileID: 519142927984188811}
+  m_Layer: 6
   m_Name: Bucket Obj
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -142,3 +143,22 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
+--- !u!114 &519142927984188811
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7135587716975529802}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ded47c8036237e94c9574add44413266, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  requiredTool: {fileID: 0}
+  stringToDisplay: Interact
+  dirtyCookingSet: {fileID: 11400000, guid: 461175656a059d040ac5724613f379c2, type: 2}
+  cleanCookingSet: {fileID: 11400000, guid: fcfd150803525584fb6142fb44d3bf70, type: 2}
+  dirtyEatingKit: {fileID: 11400000, guid: 1ee8e46d849185e46a5ddfb28c89cf9f, type: 2}
+  cleanEatingKit: {fileID: 11400000, guid: 0d88c230b22391b448d1287cb78168c3, type: 2}
+  waterBucket: {fileID: 11400000, guid: 6bac91de8ac3a3a40a7758d26a334de0, type: 2}

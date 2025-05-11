@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &5574382345551691433
+--- !u!1 &1180081651324112975
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,89 +8,45 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 6035918998679040886}
-  - component: {fileID: 3261171199074584218}
-  - component: {fileID: 1494773951668306207}
-  m_Layer: 8
+  - component: {fileID: 3774481739418980902}
+  m_Layer: 0
   m_Name: Leaf Pile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &6035918998679040886
+--- !u!4 &3774481739418980902
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5574382345551691433}
+  m_GameObject: {fileID: 1180081651324112975}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 10.33, y: 0.492, z: 2.11}
+  m_LocalPosition: {x: 13.589308, y: 2.71, z: 8.7790365}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 2713029781750127761}
+  - {fileID: 8498946876416756545}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &3261171199074584218
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5574382345551691433}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1.3698807, y: 0.38888398, z: 1.2365297}
-  m_Center: {x: -0.11644459, y: 0.03336124, z: -0.118264854}
---- !u!114 &1494773951668306207
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5574382345551691433}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3ca22f9d3b765a04fae54a02c9dbe252, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  requiredTool: {fileID: 0}
-  stringToDisplay: Gather Tinder
-  item:
-    name: Tinder
-    count: 1
---- !u!1001 &2462386300028255098
+--- !u!1001 &8248600393605573802
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 6035918998679040886}
+    m_TransformParent: {fileID: 3774481739418980902}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 86d12eb4122f138409af4edccc270338, type: 3}
       propertyPath: m_LocalScale.x
-      value: 94.89
+      value: 40.654305
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 86d12eb4122f138409af4edccc270338, type: 3}
       propertyPath: m_LocalScale.y
-      value: 94.89
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 86d12eb4122f138409af4edccc270338, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 94.89
+      value: 40.654305
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 86d12eb4122f138409af4edccc270338, type: 3}
       propertyPath: m_LocalPosition.x
@@ -98,7 +54,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 86d12eb4122f138409af4edccc270338, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.01
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 86d12eb4122f138409af4edccc270338, type: 3}
       propertyPath: m_LocalPosition.z
@@ -106,23 +62,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 86d12eb4122f138409af4edccc270338, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.7071068
+      value: 0.69264466
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 86d12eb4122f138409af4edccc270338, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.7071068
+      value: -0.69264483
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 86d12eb4122f138409af4edccc270338, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0.14227879
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 86d12eb4122f138409af4edccc270338, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0.14227882
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 86d12eb4122f138409af4edccc270338, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: -90
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 86d12eb4122f138409af4edccc270338, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
@@ -132,21 +88,68 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 86d12eb4122f138409af4edccc270338, type: 3}
-      propertyPath: m_ConstrainProportionsScale
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 86d12eb4122f138409af4edccc270338, type: 3}
       propertyPath: m_Name
       value: LeafPile
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 86d12eb4122f138409af4edccc270338, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 86d12eb4122f138409af4edccc270338, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2182670577224779983}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 86d12eb4122f138409af4edccc270338, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6431377827891077646}
   m_SourcePrefab: {fileID: 100100000, guid: 86d12eb4122f138409af4edccc270338, type: 3}
---- !u!4 &2713029781750127761 stripped
+--- !u!4 &8498946876416756545 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 86d12eb4122f138409af4edccc270338, type: 3}
-  m_PrefabInstance: {fileID: 2462386300028255098}
+  m_PrefabInstance: {fileID: 8248600393605573802}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &9131474352612364795 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 86d12eb4122f138409af4edccc270338, type: 3}
+  m_PrefabInstance: {fileID: 8248600393605573802}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &2182670577224779983
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9131474352612364795}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.019837381, y: 0.019638099, z: 0.019139746}
+  m_Center: {x: 0.0003321511, y: 0.0006068393, z: 0.005250781}
+--- !u!114 &6431377827891077646
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9131474352612364795}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de92023fee4dd6d4e9ec8186d154078d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  requiredTool: {fileID: 11400000, guid: 341e30fdf85b6044587c77a4df239384, type: 2}
+  stringToDisplay: Gather Tinder
+  amount: 1

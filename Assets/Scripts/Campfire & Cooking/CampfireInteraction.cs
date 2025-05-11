@@ -6,6 +6,7 @@ public class CampfireInteraction : InteractableObject
     Tool cookingSetTool;
     [SerializeField]
     GameObject cookingSetObj;
+
     public override void Interaction()
     {
         GameObject player = GameObject.Find("Player");
