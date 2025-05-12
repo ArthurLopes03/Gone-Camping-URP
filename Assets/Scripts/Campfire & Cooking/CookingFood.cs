@@ -7,7 +7,17 @@ public class CookingFood : MonoBehaviour
     float cookingTimer = 0f;
 
     [SerializeField]
-    float overCookPoint = 10f;
+    float overCookPoint = 30f;
+
+    [SerializeField]
+    float cookTime = 10f;
+
+    public Task task;
+
+    private void Start()
+    {
+        task = GameObject.Find("Cook Some Food").GetComponent<Task>();
+    }
 
     public void StartCooking()
     {
@@ -17,7 +27,12 @@ public class CookingFood : MonoBehaviour
     void Cook()
     {
         cookingTimer += Time.deltaTime;
-        if (cookingTimer >= overCookPoint)
+        if (cookingTimer >= cookTime)
+        {
+            task.CompleteTask();
+            Debug.Log("Food is cooked!");
+        }
+        else if (cookingTimer >= overCookPoint)
         {
             Debug.Log("Food is overcooked!");
         }

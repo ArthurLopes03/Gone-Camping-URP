@@ -6,10 +6,13 @@ public class TentInteraction : InteractableObject
 
     [SerializeField] Structure tentStructure;
 
+    Task task;
+
     void Start()
     {
-        taskGroup3 = GameObject.Find("Task Group 3").GetComponent<TaskGroup>();
-        taskGroup4 = GameObject.Find("Task Group 4").GetComponent<TaskGroup>();
+        taskGroup3 = GameObject.Find("Task Group 5").GetComponent<TaskGroup>();
+        taskGroup4 = GameObject.Find("Task Group 6").GetComponent<TaskGroup>();
+        task = GameObject.Find("Pack Up Tent").GetComponent<Task>();
 
         if (taskGroup3 == null || taskGroup4 == null)
         {
@@ -48,6 +51,7 @@ public class TentInteraction : InteractableObject
         }
         else if (taskGroup4.active)
         {
+            task.CompleteTask();
             PackUpTent();
         }
     }

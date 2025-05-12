@@ -31,6 +31,9 @@ public class CookingSetInteraction : InteractableObject
             playerItemManager.ReplaceTool(eatingKit, cookedFood);
             objectInteraction.ChangeTool(cookedFood);
 
+            cookingFood.task.CompleteTask();
+            cookingFood.isCooking = false;
+
             isDirty = true;
         }
         else if (GameObject.Find("Player").GetComponent<ObjectPlacer>().structureBeingPlaced == filledWaterBucket)

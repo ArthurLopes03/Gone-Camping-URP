@@ -10,6 +10,9 @@ public class FoodEating : MonoBehaviour
     [SerializeField]
     Tool dirtyEatingKit;
 
+    [SerializeField]
+    Task task;
+
     public bool holdingFood = false;
 
     private void Start()
@@ -44,6 +47,8 @@ public class FoodEating : MonoBehaviour
             Debug.Log("Food Eaten");
             objectInteraction.ClearTool();
             interactionText.text = "";
+
+            task.CompleteTask();
 
             this.enabled = false;
         }

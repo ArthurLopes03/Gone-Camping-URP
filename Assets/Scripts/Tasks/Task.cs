@@ -13,6 +13,10 @@ public class Task : MonoBehaviour
 
     public void CompleteTask()
     {
+        if (isCompleted)
+        {
+            return;
+        }
         if (taskText != null)
         {
             taskText.fontStyle = FontStyles.Strikethrough;

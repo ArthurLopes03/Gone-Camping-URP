@@ -8,6 +8,9 @@ public class TaskGroup : MonoBehaviour
     [SerializeField]
     public Task[] tasks;
 
+    [SerializeField]
+    int timeValue;
+
     private void Start()
     {
         foreach (Task task in tasks)
@@ -34,6 +37,8 @@ public class TaskGroup : MonoBehaviour
         Debug.Log($"All tasks in {groupName} are completed!");
 
         this.GetComponentInParent<TaskManager>().CompleteTaskGroup();
+
+        GameObject.Find("TimeManager").GetComponent<TimeManager>().Hours = timeValue;
         active = false;
     }
 }

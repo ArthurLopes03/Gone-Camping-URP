@@ -27,8 +27,8 @@ Transform:
   m_GameObject: {fileID: 2366194067978991057}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.016, y: -4.57, z: 0.03}
-  m_LocalScale: {x: 0.16671826, y: -1.0302197, z: 0.15127409}
+  m_LocalPosition: {x: 0.015999993, y: -1.9931785, z: 0.030000199}
+  m_LocalScale: {x: 0.16671826, y: -0.55361354, z: 0.15127406}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2860746776883895858}
@@ -129,8 +129,8 @@ Transform:
   m_GameObject: {fileID: 3046570675515776087}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 3.23, y: -0.56, z: 3.23}
+  m_LocalPosition: {x: 0, y: 0.4821, z: 0}
+  m_LocalScale: {x: 3.23, y: -1.0421041, z: 3.23}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5147594599771402019}
@@ -390,7 +390,7 @@ MonoBehaviour:
   eatingKit: {fileID: 11400000, guid: 0d88c230b22391b448d1287cb78168c3, type: 2}
   cookedFood: {fileID: 11400000, guid: 4aed4bbf0e6e1ee4ab18da30375bbea3, type: 2}
   dirtyCookingSet: {fileID: 11400000, guid: 461175656a059d040ac5724613f379c2, type: 2}
-  filledWaterBucket: {fileID: 0}
+  filledWaterBucket: {fileID: 11400000, guid: 6bac91de8ac3a3a40a7758d26a334de0, type: 2}
 --- !u!114 &5502768639785943744
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -405,6 +405,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isCooking: 0
   overCookPoint: 10
+  cookTime: 10
+  task: {fileID: 0}
 --- !u!1001 &7001783557053754371
 PrefabInstance:
   m_ObjectHideFlags: 0

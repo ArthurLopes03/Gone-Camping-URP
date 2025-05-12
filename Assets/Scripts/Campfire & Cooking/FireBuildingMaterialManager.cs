@@ -6,6 +6,12 @@ public class FireBuildingMaterialManager : MonoBehaviour
     [SerializeField]
     Tool sticks, tinder;
 
+    [SerializeField]
+    int sticksNeeded, tinderNeeded;
+
+    [SerializeField]
+    Task task;
+
     public int sticksAmount, tinderAmount;
 
     [SerializeField]
@@ -48,6 +54,16 @@ public class FireBuildingMaterialManager : MonoBehaviour
         else if (tool == tinder)
         {
             tinderAmount += amount;
+        }
+
+        CheckIfEnoughMaterial();
+    }
+
+    public void CheckIfEnoughMaterial()
+    {
+        if (sticksAmount >= sticksNeeded && tinderAmount >= tinderNeeded)
+        {
+            task.CompleteTask();
         }
     }
 

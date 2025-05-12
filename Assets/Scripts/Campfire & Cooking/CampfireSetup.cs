@@ -11,8 +11,11 @@ public class CampfireSetup : InteractableObject
 
     FireBuildingMaterialManager fireBuildingMaterialManager;
 
+    Task task;
+
     private void Start()
     {
+        task = GameObject.Find("Build Campfire").GetComponent<Task>();
         fireBuildingMaterialManager = GameObject.Find("Player").GetComponent<FireBuildingMaterialManager>();
     }
 
@@ -35,6 +38,7 @@ public class CampfireSetup : InteractableObject
         FireBuildingMaterialManager fireBuildingMaterialManager = GameObject.Find("Player").GetComponent<FireBuildingMaterialManager>();
         if (fireBuildingMaterialManager.EnoughBuildingMaterial(sticksRequired, tinderRequired))
         {
+            task.CompleteTask();
             fireBuildingMaterialManager.sticksAmount -= sticksRequired;
             fireBuildingMaterialManager.tinderAmount -= tinderRequired;
             fireBuildingMaterialManager.RemoveFireBuildingMaterials();
