@@ -18,8 +18,8 @@ public class InventoryVisualizer : MonoBehaviour
         // Check each mapping
         foreach (var mapping in itemMappings)
         {
-            int count = BackpackInventory.instance.GetItemCount(mapping.itemName);
-
+            //int count = BackpackInventory.instance.GetItemCount(mapping.itemName);
+            /*
             if (count > 0)
             {
                 if (!spawnedItems.ContainsKey(mapping.itemName))
@@ -44,6 +44,7 @@ public class InventoryVisualizer : MonoBehaviour
                     spawnedItems.Remove(mapping.itemName);
                 }
             }
+            */
         }
     }
 }

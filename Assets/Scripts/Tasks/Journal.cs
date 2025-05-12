@@ -39,7 +39,7 @@ public class Journal : MonoBehaviour
             }
         }
 
-        currentObjectiveText.text = taskManager.taskText;
+        //currentObjectiveText.text = taskManager.taskText;
 
         if (journalOpen)
         {
