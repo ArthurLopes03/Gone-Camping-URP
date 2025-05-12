@@ -157,5 +157,10 @@ MonoBehaviour:
   stringToDisplay: Open Bag
   backpackUI: {fileID: 0}
   items:
-  - {fileID: 11400000, guid: 1bb943ed61ebb6c469496ec72066be26, type: 2}
   - {fileID: 11400000, guid: 52d5b50cbcb797c4f8eb8531437f92aa, type: 2}
+  - {fileID: 11400000, guid: fcfd150803525584fb6142fb44d3bf70, type: 2}
+  - {fileID: 11400000, guid: f50bbd0464b63804493584e5f83bc55b, type: 2}
+  - {fileID: 11400000, guid: 0d88c230b22391b448d1287cb78168c3, type: 2}
+  - {fileID: 11400000, guid: 4785e347bc2cfcc4bbedf5afa40300bd, type: 2}
+  - {fileID: 11400000, guid: 1bb943ed61ebb6c469496ec72066be26, type: 2}
+  - {fileID: 11400000, guid: 1efc30ff13832cd40a0b60ff78016356, type: 2}

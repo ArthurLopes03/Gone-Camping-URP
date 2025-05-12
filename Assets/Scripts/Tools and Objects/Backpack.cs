@@ -11,6 +11,8 @@ public class Backpack : InteractableObject
     GameObject interactUI;
     GameObject player;
 
+    Task task;
+
     BackpackUIGenerator backpackUIGenerator;
 
     public List<BackpackStorableItem> items;
@@ -22,12 +24,48 @@ public class Backpack : InteractableObject
         backpackUIGenerator = backpackUI.GetComponent<BackpackUIGenerator>();
         playerUI = GameObject.Find("Player UI");
         interactUI = GameObject.Find("Interact UI");
+
+        task = GameObject.Find("Put Down Backpack").GetComponent<Task>();
+
+        if(task != null)
+        {
+            task.CompleteTask();
+        }
     }
 
     public override void Interaction()
     {
+        if(player.GetComponent<ObjectPlacer>().structureBeingPlaced != null && player.GetComponent<ObjectPlacer>().structureBeingPlaced.canReturnToBackpack)
+        {
+            PutItemInBackpack(player.GetComponent<ObjectPlacer>().structureBeingPlaced);
+
+            player.GetComponent<ObjectPlacer>().structureBeingPlaced = null;
+
+            player.GetComponent<PlayerItemManager>().EnableItems();
+
+            return;
+        }
+
         backpackUIGenerator.GenerateButtons(this);
         OpenBackPack();
+    }
+
+    public override bool CanInteract(Tool heldTool)
+    {
+        if(player.GetComponent<ObjectPlacer>().structureBeingPlaced != null && player.GetComponent<ObjectPlacer>().structureBeingPlaced.canReturnToBackpack)
+        {
+            AlterStringToDisplay("Return " + player.GetComponent<ObjectPlacer>().structureBeingPlaced.itemName + " to Backpack");
+            return true;
+        }
+        else if(heldTool == requiredTool || requiredTool == null)
+        {
+            AlterStringToDisplay("Open Backpack");
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
 
     private void Update()
@@ -43,8 +81,6 @@ public class Backpack : InteractableObject
 
     public void CloseBackPack()
     {
-        backpackUIGenerator.ClearButtons();
-
         backpackOpen = false;
 
         player.GetComponent<PlayerController>().enabled = true;
@@ -73,22 +109,48 @@ public class Backpack : InteractableObject
         Cursor.lockState = CursorLockMode.None;
     }
 
+    public void PutItemInBackpack(BackpackStorableItem item)
+    {
+        items.Add(item);
+
+        if (item.isTool == true)
+        {
+            player.GetComponent<PlayerItemManager>().ReplaceTool((Tool)item, null);
+        }
+        else
+        {
+            player.GetComponent<PlayerItemManager>().PutAwayStructure();
+        }
+
+        backpackUIGenerator.GenerateButtons(this);
+    }
     public void TakeItemFromBackpack(BackpackStorableItem item)
     {
-        CloseBackPack();
-
         if(item.isTool == true)
         {
-            player.GetComponent<ObjectInteraction>().ChangeTool((Tool)item);
+            if(player.GetComponent<PlayerItemManager>().AddItem((Tool)item))
+            {
+                items.Remove(item);
+            }
+            else
+            {
+                Debug.Log("No empty slots in the backpack.");
+                return;
+            }
         }
         else
         {
             Structure structure = (Structure)item;
 
-            player.GetComponent<ObjectPlacer>().ChangeSelectedStructure((Structure)item, 
-                Instantiate(structure.structureBlueprint, player.transform.position, Quaternion.identity));
+            PlayerItemManager playerItemManager = player.GetComponent<PlayerItemManager>();
+
+            playerItemManager.PickUpStructure(structure);
+
+            CloseBackPack();
         }
 
         items.Remove(item);
+
+        backpackUIGenerator.GenerateButtons(this);
     }
 }
