@@ -52,6 +52,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Campfire Spot Blueprint
       objectReference: {fileID: 0}
+    - target: {fileID: 4588141067825649560, guid: f0a5b6266aec9294c917c34df4f73545, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: c6b8f51ca0d42a54ab66c727dafcdb04, type: 2}
+    - target: {fileID: 4603633277200944664, guid: f0a5b6266aec9294c917c34df4f73545, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: c6b8f51ca0d42a54ab66c727dafcdb04, type: 2}
     - target: {fileID: 7920209817595089234, guid: f0a5b6266aec9294c917c34df4f73545, type: 3}
       propertyPath: m_IsActive
       value: 1

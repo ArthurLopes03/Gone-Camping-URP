@@ -10,12 +10,16 @@ public class Blackout : MonoBehaviour
     Image blackoutImage;
 
     bool isFadingIn = false;
-    bool isFadingOut = false;
+    bool isFadingOut = true;
 
     Action onFadeInComplete;
 
-    public void StartBlackout(Action action)
+    float waitDuration = 1f;
+
+    public void StartBlackout(Action action, float waitTime)
     {
+        waitDuration = waitTime;
+
         isFadingIn = true;
 
         onFadeInComplete = action;
@@ -51,10 +55,16 @@ public class Blackout : MonoBehaviour
 
         if (blackoutImage.color.a >= 1)
         {
-            isFadingIn = false;
             onFadeInComplete?.Invoke();
-            isFadingOut = true;
+
+            Invoke("StartFadeOut", waitDuration);
         }
+    }
+
+    void StartFadeOut()
+    {
+        isFadingIn = false;
+        isFadingOut = true;
     }
 
     void FadeOut()

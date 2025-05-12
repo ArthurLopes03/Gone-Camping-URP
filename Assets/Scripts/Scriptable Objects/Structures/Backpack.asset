@@ -15,5 +15,5 @@ MonoBehaviour:
   isTool: 0
   itemName: Backpack
   structurePrefab: {fileID: 1156981655155006573, guid: f93dc5fcbc0f05646a84a7c2740377f1, type: 3}
-  structureBlueprint: {fileID: 8639840863143401157, guid: 5d95c519d7526c94eae0eaeb148a920f, type: 3}
+  structureBlueprint: {fileID: 8749923336517077213, guid: 5d95c519d7526c94eae0eaeb148a920f, type: 3}
   canReturnToBackpack: 0

@@ -50,6 +50,8 @@ public class FoodEating : MonoBehaviour
 
             task.CompleteTask();
 
+            GameObject.Find("Blackout Canvas").GetComponent<Blackout>().StartBlackout(null, 2f);
+
             this.enabled = false;
         }
     }

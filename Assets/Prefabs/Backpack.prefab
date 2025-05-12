@@ -11,11 +11,11 @@ GameObject:
   - component: {fileID: 7473492392560381454}
   m_Layer: 0
   m_Name: Backpack
-  m_TagString: Untagged
+  m_TagString: Backpack
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &7473492392560381454
 Transform:
   m_ObjectHideFlags: 0
@@ -104,7 +104,6 @@ MonoBehaviour:
   stringToDisplay: Open Bag
   backpackUI: {fileID: 0}
   items:
-  - {fileID: 11400000, guid: 52d5b50cbcb797c4f8eb8531437f92aa, type: 2}
   - {fileID: 11400000, guid: fcfd150803525584fb6142fb44d3bf70, type: 2}
   - {fileID: 11400000, guid: f50bbd0464b63804493584e5f83bc55b, type: 2}
   - {fileID: 11400000, guid: 0d88c230b22391b448d1287cb78168c3, type: 2}
@@ -175,7 +174,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -7238423918358869591, guid: a20da98f1b5bdb14dbb334b5f457a62f, type: 3}
+  - {fileID: 2100000, guid: c050ae2a87e05694585bf2eb19ae7795, type: 2}
   - {fileID: -3846018093981099296, guid: a20da98f1b5bdb14dbb334b5f457a62f, type: 3}
   - {fileID: -2356527901718980236, guid: a20da98f1b5bdb14dbb334b5f457a62f, type: 3}
   m_StaticBatchInfo:
@@ -263,10 +262,10 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -642686928791947833, guid: a20da98f1b5bdb14dbb334b5f457a62f, type: 3}
-  - {fileID: -7238423918358869591, guid: a20da98f1b5bdb14dbb334b5f457a62f, type: 3}
+  - {fileID: 2100000, guid: c050ae2a87e05694585bf2eb19ae7795, type: 2}
+  - {fileID: 2100000, guid: 7e93ff41feb949146b5b0067ed3f923b, type: 2}
   - {fileID: -2356527901718980236, guid: a20da98f1b5bdb14dbb334b5f457a62f, type: 3}
-  - {fileID: -905690159841262435, guid: a20da98f1b5bdb14dbb334b5f457a62f, type: 3}
+  - {fileID: 2100000, guid: a0bef203c3f380a44bb33e7f821005c7, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

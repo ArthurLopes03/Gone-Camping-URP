@@ -24,6 +24,7 @@ public class WaterBucketInteraction : InteractableObject
         else if (playerItemManager.GetCurrentlySelectedItem() == null)
         {
             playerItemManager.PickUpStructure(waterBucket);
+            Destroy(this.gameObject.transform.parent.gameObject, 0.1f);
             this.gameObject.SetActive(false);
             Debug.Log("Picked Up Cooking Set");
         }

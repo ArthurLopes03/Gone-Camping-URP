@@ -47,7 +47,7 @@ public class TentInteraction : InteractableObject
     {
         if(taskGroup3.active)
         {
-            GameObject.Find("Blackout Canvas").GetComponent<Blackout>().StartBlackout(NextDay);
+            GameObject.Find("Blackout Canvas").GetComponent<Blackout>().StartBlackout(NextDay, 3f);
         }
         else if (taskGroup4.active)
         {

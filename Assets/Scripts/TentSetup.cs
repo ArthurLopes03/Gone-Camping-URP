@@ -16,7 +16,7 @@ public class TentSetup : InteractableObject
 
         if (blackout != null)
         {
-            blackout.StartBlackout(SetUpTent);
+            blackout.StartBlackout(SetUpTent, 2f);
         }
     }
 

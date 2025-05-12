@@ -25,11 +25,11 @@ public class ItemUISlot : MonoBehaviour
     }
 
     TextMeshProUGUI toolNameText;
-    Image image;
+    RawImage image;
 
     private void Awake()
     {
-        image = UIObj.GetComponent<Image>();
+        image = UIObj.GetComponent<RawImage>();
         toolNameText = UIObj.GetComponentInChildren<TextMeshProUGUI>();
         if (toolNameText == null)
         {

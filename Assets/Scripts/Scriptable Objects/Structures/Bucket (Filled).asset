@@ -15,4 +15,5 @@ MonoBehaviour:
   isTool: 0
   itemName: Filled Bucket
   structurePrefab: {fileID: 2079397057106622285, guid: f3a9267676a44e940b02a0f5e3446ca9, type: 3}
-  structureBlueprint: {fileID: 2079397057106622285, guid: 4b29c0ab26ac43545947aaadbb5e233c, type: 3}
+  structureBlueprint: {fileID: 2079397057106622285, guid: 89081a2db81f60546af351f0b9cbbe12, type: 3}
+  canReturnToBackpack: 0

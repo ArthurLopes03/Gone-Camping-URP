@@ -52,8 +52,12 @@ public class Backpack : InteractableObject
 
     public override bool CanInteract(Tool heldTool)
     {
-        if(player.GetComponent<ObjectPlacer>().structureBeingPlaced != null && player.GetComponent<ObjectPlacer>().structureBeingPlaced.canReturnToBackpack)
+        if(player.GetComponent<ObjectPlacer>().structureBeingPlaced != null)
         {
+            if (player.GetComponent<ObjectPlacer>().structureBeingPlaced.canReturnToBackpack == false)
+            {
+                return false;
+            }
             AlterStringToDisplay("Return " + player.GetComponent<ObjectPlacer>().structureBeingPlaced.itemName + " to Backpack");
             return true;
         }

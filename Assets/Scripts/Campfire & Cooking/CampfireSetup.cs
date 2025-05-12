@@ -42,7 +42,8 @@ public class CampfireSetup : InteractableObject
             fireBuildingMaterialManager.sticksAmount -= sticksRequired;
             fireBuildingMaterialManager.tinderAmount -= tinderRequired;
             fireBuildingMaterialManager.RemoveFireBuildingMaterials();
-            BuildCampfire();
+
+            GameObject.Find("Blackout Canvas").GetComponent<Blackout>().StartBlackout(BuildCampfire, 2f);
         }
     }
 

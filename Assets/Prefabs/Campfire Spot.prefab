@@ -100,6 +100,99 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5bf0b457916c4b94a94357d2e42ae25d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &2494318046048017357
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5785808261605245305}
+  - component: {fileID: 6168804475996799025}
+  - component: {fileID: 3670198579797765764}
+  - component: {fileID: 2421609596659135891}
+  m_Layer: 6
+  m_Name: Cooking Set
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &5785808261605245305
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2494318046048017357}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071067}
+  m_LocalPosition: {x: -0.00038609753, y: 0.00040049394, z: 0.0031453366}
+  m_LocalScale: {x: 0.004080078, y: 0.0040800795, z: 0.0040800795}
+  m_ConstrainProportionsScale: 1
+  m_Children:
+  - {fileID: 7141995022931505343}
+  - {fileID: 7521694304040760324}
+  m_Father: {fileID: 7395452033981041640}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!136 &6168804475996799025
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2494318046048017357}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 1.1165857
+  m_Height: 5.1514816
+  m_Direction: 1
+  m_Center: {x: 0.100000024, y: 1.4200004, z: -0.15162332}
+--- !u!114 &3670198579797765764
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2494318046048017357}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e873f8ecea0c6334e999fa840382b857, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  requiredTool: {fileID: 11400000, guid: f50bbd0464b63804493584e5f83bc55b, type: 2}
+  stringToDisplay: Add Food to Pot
+  eatingKit: {fileID: 11400000, guid: 0d88c230b22391b448d1287cb78168c3, type: 2}
+  cookedFood: {fileID: 11400000, guid: 4aed4bbf0e6e1ee4ab18da30375bbea3, type: 2}
+  dirtyCookingSet: {fileID: 11400000, guid: 461175656a059d040ac5724613f379c2, type: 2}
+  filledWaterBucket: {fileID: 11400000, guid: 6bac91de8ac3a3a40a7758d26a334de0, type: 2}
+--- !u!114 &2421609596659135891
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2494318046048017357}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0af2e625986193049ba099df3b1078d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isCooking: 0
+  overCookPoint: 10
+  cookTime: 10
+  task: {fileID: 0}
 --- !u!1 &3046570675515776087
 GameObject:
   m_ObjectHideFlags: 0
@@ -261,7 +354,7 @@ Transform:
   - {fileID: 7395452033981041640}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &9015759465145055467
+--- !u!1 &6520838328109311788
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -269,49 +362,46 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 7953360462998488276}
-  - component: {fileID: 4716070936810233890}
-  - component: {fileID: 5947519021166605416}
-  - component: {fileID: 66131219078242033}
-  - component: {fileID: 5874219841269773694}
-  - component: {fileID: 5502768639785943744}
-  m_Layer: 6
-  m_Name: Cooking Set
+  - component: {fileID: 7141995022931505343}
+  - component: {fileID: 503971716851280943}
+  - component: {fileID: 4603633277200944664}
+  m_Layer: 0
+  m_Name: Cylinder.004
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!4 &7953360462998488276
+  m_IsActive: 1
+--- !u!4 &7141995022931505343
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9015759465145055467}
+  m_GameObject: {fileID: 6520838328109311788}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: 0.0002764509, y: -0.000111421075, z: 0.01151344}
-  m_LocalScale: {x: 0.009836635, y: 0.0028197705, z: 0.009836637}
-  m_ConstrainProportionsScale: 1
+  m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+  m_LocalPosition: {x: 0.13370405, y: 2.18574, z: 0.021928754}
+  m_LocalScale: {x: 100, y: 100, z: 100}
+  m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 7395452033981041640}
+  m_Father: {fileID: 5785808261605245305}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &4716070936810233890
+--- !u!33 &503971716851280943
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9015759465145055467}
-  m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
---- !u!23 &5947519021166605416
+  m_GameObject: {fileID: 6520838328109311788}
+  m_Mesh: {fileID: 6255687079079774844, guid: 8745d172d2a82f54889005d85c84e394, type: 3}
+--- !u!23 &4603633277200944664
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9015759465145055467}
+  m_GameObject: {fileID: 6520838328109311788}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -328,7 +418,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: a0bef203c3f380a44bb33e7f821005c7, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -350,63 +440,92 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!136 &66131219078242033
-CapsuleCollider:
+--- !u!1 &7389599239586012017
+GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9015759465145055467}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7521694304040760324}
+  - component: {fileID: 2514643614254876405}
+  - component: {fileID: 4588141067825649560}
+  m_Layer: 0
+  m_Name: Cylinder.009
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7521694304040760324
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7389599239586012017}
   serializedVersion: 2
-  m_Radius: 0.5000001
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
---- !u!114 &5874219841269773694
-MonoBehaviour:
+  m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+  m_LocalPosition: {x: -0, y: 0, z: 0}
+  m_LocalScale: {x: 100, y: 100, z: 100}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5785808261605245305}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!33 &2514643614254876405
+MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9015759465145055467}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e873f8ecea0c6334e999fa840382b857, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  requiredTool: {fileID: 11400000, guid: f50bbd0464b63804493584e5f83bc55b, type: 2}
-  stringToDisplay: Add Food to Pot
-  eatingKit: {fileID: 11400000, guid: 0d88c230b22391b448d1287cb78168c3, type: 2}
-  cookedFood: {fileID: 11400000, guid: 4aed4bbf0e6e1ee4ab18da30375bbea3, type: 2}
-  dirtyCookingSet: {fileID: 11400000, guid: 461175656a059d040ac5724613f379c2, type: 2}
-  filledWaterBucket: {fileID: 11400000, guid: 6bac91de8ac3a3a40a7758d26a334de0, type: 2}
---- !u!114 &5502768639785943744
-MonoBehaviour:
+  m_GameObject: {fileID: 7389599239586012017}
+  m_Mesh: {fileID: 3525479140033381557, guid: 8745d172d2a82f54889005d85c84e394, type: 3}
+--- !u!23 &4588141067825649560
+MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9015759465145055467}
+  m_GameObject: {fileID: 7389599239586012017}
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0af2e625986193049ba099df3b1078d8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isCooking: 0
-  overCookPoint: 10
-  cookTime: 10
-  task: {fileID: 0}
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: a0bef203c3f380a44bb33e7f821005c7, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!1001 &7001783557053754371
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -488,7 +607,7 @@ PrefabInstance:
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: e5540165ad4600a48b6e789e902f7ab4, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 7953360462998488276}
+      addedObject: {fileID: 5785808261605245305}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: e5540165ad4600a48b6e789e902f7ab4, type: 3}
       insertIndex: -1
@@ -522,7 +641,7 @@ MonoBehaviour:
   requiredTool: {fileID: 0}
   stringToDisplay: Interact
   cookingSetTool: {fileID: 11400000, guid: fcfd150803525584fb6142fb44d3bf70, type: 2}
-  cookingSetObj: {fileID: 9015759465145055467}
+  cookingSetObj: {fileID: 2494318046048017357}
 --- !u!136 &4225228523704187545
 CapsuleCollider:
   m_ObjectHideFlags: 0

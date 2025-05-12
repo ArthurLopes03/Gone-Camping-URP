@@ -218,7 +218,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 953197312200001408}
-  - component: {fileID: 8866348796570508206}
   m_Layer: 6
   m_Name: Backpack Obj
   m_TagString: Untagged
@@ -243,24 +242,3 @@ Transform:
   - {fileID: 3669627931755700986}
   m_Father: {fileID: 1122611965113128445}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &8866348796570508206
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9194057519806165781}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 2.239406, y: 2.6483126, z: 2.859468}
-  m_Center: {x: 1.1100638, y: 0.33663058, z: 0.929734}

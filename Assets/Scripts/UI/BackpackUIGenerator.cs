@@ -12,6 +12,8 @@ public class BackpackUIGenerator : MonoBehaviour
     GameObject UIHeldItemsContent;
     [SerializeField]
     PlayerItemManager playerItemManager;
+    [SerializeField]
+    Structure backpackStructure;
 
     private void Start()
     {
@@ -71,5 +73,17 @@ public class BackpackUIGenerator : MonoBehaviour
             Destroy(child.gameObject);
         }
         inputModule.enabled = true;
+    }
+
+    public void PickUpBackpack()
+    {
+        GameObject backpack = GameObject.FindGameObjectWithTag("Backpack");
+        backpack.GetComponentInChildren<Backpack>().CloseBackPack();
+
+        playerItemManager.PickUpStructure(backpackStructure);
+
+        backpack.SetActive(false);
+
+        Destroy(backpack, 0.1f);
     }
 }
