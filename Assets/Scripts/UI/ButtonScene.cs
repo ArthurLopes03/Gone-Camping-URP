@@ -4,11 +4,9 @@ using UnityEngine.SceneManagement;
 
 public class ButtonScene : MonoBehaviour
 {
-    [SerializeField] private string sceneToLoad;
-    
     public void LoadScene()
     {
-        SceneManager.LoadScene(sceneToLoad);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
     public void Quit()

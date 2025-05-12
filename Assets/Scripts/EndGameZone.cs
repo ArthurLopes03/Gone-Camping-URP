@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class EndGameZone : MonoBehaviour
 {
@@ -15,5 +16,6 @@ public class EndGameZone : MonoBehaviour
     void EndGame()
     {
         Debug.Log("End Game");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 }
